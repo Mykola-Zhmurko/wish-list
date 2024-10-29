@@ -12,7 +12,7 @@ const bot = new Telegraf(BOT_TOKEN);//dieses Token ist für Telegram für neue B
 
 const wishlist = JSON.parse(fs.readFileSync('wishlist.json', 'utf8'))//utf8 ist eine Codierung, in der wir es lesen können werden//DAS IST ALLE GESCHENKE AUS WISHLIST.JSON
 // JSON.parse wandelt alles was in ('') steht in einen Massiv um// umwandeln = transformieren, preobrasovuvat
-bot.start((ctx) => ctx.reply('Your wish-list that you can change, here are the commands:\n/wishlist \n/add + your gift \n/delete + number of gift \n/buy + name of gift'));
+bot.start((ctx) => ctx.reply('Your wish-list that you can change, here are the commands:\n/wishlist \n/add + your gift \n/delete + number of gift \n/buy + number of gift'));
 
 bot.command('wishlist', (ctx) =>{
     const gifts = wishlist.map((gift, index) => {
